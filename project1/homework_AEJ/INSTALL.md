@@ -49,13 +49,22 @@ src/*.c: Compiles all C source files found in the src folder.
 
 -o mp2: Creates the executable file named mp2.
 ## 3. Use of program
-Execute the generated mp2 binary file in the shell
+To ensure the installation works correctly, run the generated mp2 binary file in the shell  on the provided C2H2 dataset:
 ```bash
-./mp2
+./mp2 data/c2h2.h5
 ```
 ### 3.1 Correction of errors
 ```bash
 If you receive an error saying libtrexio.so cannot be found, add the library path to your environment variables before running:```
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-./mp2
+* **On Linux:**
+    ```bash
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+    ```
+* **On macOS:**
+    ```bash
+    export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/lib
+    ```
+Then run the executable again.
+./mp2 data/c2h2.h5
 ```
+
